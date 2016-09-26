@@ -1,7 +1,7 @@
 # main links links
 main:
-  - title: "Sample Navigation Link"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/navigation/
+  - title: "About Me"
+    url: https://www.google.com/
 
-  - title: "Sample Navigation Link 2"
+  - title: "Blog"
     url: /
