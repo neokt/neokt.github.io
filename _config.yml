@@ -18,9 +18,9 @@ teaser                   : # filename of teaser fallback teaser image placed in 
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
-  provider               : # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "custom"
+  provider               : "disqus"
   disqus:
-    shortname            : # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname            : "neokt"
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
@@ -79,7 +79,7 @@ analytics:
 author:
   name             : "Ting Neo"
   avatar           : "https://avatars0.githubusercontent.com/u/18187065?v=3&s=466"
-  bio              : "Data scientist and actuary"
+  bio              : "Data scientist, actuary, explorer"
   location         : "New York, NY"
   email            : "neo.kaiting@gmail.com"
   uri              :
@@ -89,7 +89,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           :
+  github           : "https://github.com/neokt"
   google_plus      :
   keybase          :
   instagram        :
