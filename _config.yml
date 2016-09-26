@@ -9,9 +9,9 @@
 locale                   : "en"
 title                    : "Tinkering with Data"
 title_separator          : "-"
-name                     : "Your Name"
-description              : "An amazing website."
-url                      : # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+name                     : "Ting Neo"
+description              : "A blog about data science"
+url                      : "https://neokt.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
@@ -77,11 +77,11 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
-  avatar           : "bio-photo.jpg"
-  bio              : "I am an amazing person."
-  location         : "Somewhere"
-  email            :
+  name             : "Ting Neo"
+  avatar           : "https://avatars0.githubusercontent.com/u/18187065?v=3&s=466"
+  bio              : "Data scientist and actuary"
+  location         : "New York, NY"
+  email            : "neo.kaiting@gmail.com"
   uri              :
   bitbucket        :
   codepen          :
