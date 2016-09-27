@@ -6,6 +6,9 @@ main:
   - title: "Blog"
     url: /
 
-  - title: "Minimal Mistakes Theme"
-    url: https://mmistakes.github.io/minimal-mistakes/docs/navigation/
+  - title: "Resume"
+    url: /
+
+ # - title: "Minimal Mistakes Theme"
+ #   url: https://mmistakes.github.io/minimal-mistakes/docs/navigation/
 
