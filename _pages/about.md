@@ -2,7 +2,7 @@
 title: "About Me"
 layout: single
 author_profile: true
-excerpt: "Data scientist, actuary, explorer of worlds"
+excerpt: "Kai-Ting Neo, FCAS, MAAA"
 permalink: /about/
 header:
   overlay_image: splash1.jpg
@@ -11,7 +11,7 @@ header:
 
 {% include base_path %}
 
-I'm Kai-Ting (Ting) Neo, FCAS, MAAA. I am a data scientist and actuary hailing from NYC, Hong Kong and Singapore.
+Hi, I'm Ting Neo. I am a data scientist and actuary hailing from NYC, Hong Kong and Singapore.
 
 Analytics and data science bring out a deep rooted joy of discovery in me. I love exploring (both in the realms of reality and abstraction), and connecting patterns to find truths. Learning data science is like equipping myself with tools to satisfy my curiosity of the world - much like acquiring a map, or sending a jury-rigged contraption hurtling into the void of space.
 
