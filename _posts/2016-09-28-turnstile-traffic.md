@@ -86,5 +86,5 @@ There were two notable areas in which we could have improved our analysis:
 - **Insights from a single source of data are less meaningful than from joining multiple datasets** - The real value in exploratory data analysis is being able to join multiple datasets to extract new patterns and insights. While our volume-based analysis was telling, the ability to cross-reference datasets for conversion would have given the analysis more impact.
 - **Data science = data storytelling** - Even the most brilliant analysis can be useless if it is not structured and communicated well. Storyboarding our presentation up front helped us to streamline our investigation and give our analysis and visualizations focus.
 
-## sPresentation
->-<iframe src="https://docs.google.com/presentation/d/1FDhCiV-IVSWog1hbzznK-8J90VM-eBV9k0KKPSI3oXk/embed?start=false&loop=true&delayms=3000" frameborder="0" width="600" height="468" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe><-
+## Presentation
+<iframe src="https://docs.google.com/presentation/d/1FDhCiV-IVSWog1hbzznK-8J90VM-eBV9k0KKPSI3oXk/embed?start=false&loop=true&delayms=3000" frameborder="0" width="600" height="468" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true" align="center"></iframe>
