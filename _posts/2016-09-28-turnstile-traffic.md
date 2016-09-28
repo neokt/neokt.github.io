@@ -1,15 +1,17 @@
 ---
 title: "Turnstile Traffic"
-excerpt: "This post should [...]"
+excerpt: "Exploring MTA Turnstile Data for a Cause"
 header:
   overlay_image: mta1.jpg
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 categories:
   - Projects
 tags:
+  - numpy
   - pandas
   - matplotlib
   - seaborn
+  - exploratory data analysis
 modified: 2016-09-28
 ---
 
@@ -24,7 +26,7 @@ In my opinion, the [two hardest questions](http://www.datascienceweekly.org/arti
 
 Thankfully, the project parameters addressed both of those questions - but I imagine that a lot of time will be spent here when embarking on more open ended projects in the future.
 
-<iframe src="https://docs.google.com/presentation/d/1FDhCiV-IVSWog1hbzznK-8J90VM-eBV9k0KKPSI3oXk/embed?start=false&loop=true&delayms=3000" frameborder="0" width="960" height="749" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+<iframe src="https://docs.google.com/presentation/d/1FDhCiV-IVSWog1hbzznK-8J90VM-eBV9k0KKPSI3oXk/embed?start=false&loop=true&delayms=3000" frameborder="0" width="600" height="468" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
 
 ### Project Scoping
 We divided the problem space into two distinct areas for exploration - volume and conversion.

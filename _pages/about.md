@@ -2,7 +2,7 @@
 title: "About Me"
 layout: single
 excerpt: "Data scientist, actuary, explorer of worlds"
-permalink: /about.html
+permalink: /about/
 header:
   overlay_image: splash1.jpg
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
