@@ -1,6 +1,6 @@
 ---
 title: "Turnstile Traffic"
-excerpt: "Exploring MTA Turnstile Data for a Cause"
+excerpt: "Exploring MTA turnstile data for a cause"
 header:
   overlay_image: mta1.jpg
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
@@ -26,7 +26,7 @@ In my opinion, the [two hardest questions](http://www.datascienceweekly.org/arti
 
 Thankfully, the project parameters addressed both of those questions - but I imagine that a lot of time will be spent here when embarking on more open ended projects in the future.
 
-### Project Scoping
+## Project Scoping
 We divided the problem space into two distinct areas for exploration:
 
 - **Volume** - Maximizing exposure to subway commuters
@@ -46,7 +46,7 @@ It's worth describing some of the fundamental tools to perform data analysis and
 
 ## Approach
 
-1. **Acquiring Data** - Weekly subway turnstile data since May 2010 is available on the [MTA's website](http://web.mta.info/developers/turnstile.html). Acquiring the data was a simple matter of downloading several week's worth of data from the site. We decided to use May 2016 data to approximate traffic during the anticipated deployment time period of May 2017.
+1. **Acquiring Data** - Weekly subway turnstile data since May 2010 is available on the [MTA's website](http://web.mta.info/developers/turnstile.html). Acquiring the data was a simple matter of pulling several week's worth of data from the site. We decided to use May 2016 data to approximate traffic during the anticipated deployment time period of May 2017.
 2. **Understanding the Data** - Turnstile counts were tracked as cumulative entries and exits, for several measures of time during the day, for an individual turnstile. To see patterns in the data by station, it became apparent that we would have to aggregate the data across individual time intervals for each station. To make things a little more complicated, the time measures were not uniform and there were occasions where turnstile counts were reset or irregularly audited.
 3. **Cleaning and Prepping the Data** - This was primarily done using Pandas and included:
     - Removing trailing whitespace
@@ -86,4 +86,5 @@ There were two notable areas in which we could have improved our analysis:
 - **Insights from a single source of data are less meaningful than from joining multiple datasets** - The real value in exploratory data analysis is being able to join multiple datasets to extract new patterns and insights. While our volume-based analysis was telling, the ability to cross-reference datasets for conversion would have given the analysis more impact.
 - **Data science = data storytelling** - Even the most brilliant analysis can be useless if it is not structured and communicated well. Storyboarding our presentation up front helped us to streamline our investigation and give our analysis and visualizations focus.
 
-<iframe src="https://docs.google.com/presentation/d/1FDhCiV-IVSWog1hbzznK-8J90VM-eBV9k0KKPSI3oXk/embed?start=false&loop=true&delayms=3000" frameborder="0" width="600" height="468" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+## sPresentation
+>-<iframe src="https://docs.google.com/presentation/d/1FDhCiV-IVSWog1hbzznK-8J90VM-eBV9k0KKPSI3oXk/embed?start=false&loop=true&delayms=3000" frameborder="0" width="600" height="468" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe><-

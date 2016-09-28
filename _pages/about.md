@@ -1,6 +1,5 @@
 ---
 title: "About Me"
-layout: single
 excerpt: "Data scientist, actuary, explorer of worlds"
 permalink: /about/
 header:
