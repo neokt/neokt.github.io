@@ -17,7 +17,7 @@ modified: 2016-09-28
 
 {% include base_path %}
 
-A fictional non-profit organization, Women Tech Women Yes (WTWY), plans to deploy street teams to collect e-mail addresses to raise awareness and increase attendance at their upcoming gala. They have requested an analysis of New York subway turnstile data to optimize the placement of their teams and maximize the number of e-mail addresses collected.
+A fictional non-profit organization, Women Tech Women Yes (WTWY), is planning to deploy street teams to raise awareness and promote attendance at an upcoming gala. They have requested an analysis of New York subway turnstile data to optimize the placement of their teams and maximize the number of contacts collected.
 
 In my opinion, the [two hardest questions](http://www.datascienceweekly.org/articles/data-science-project-checklist-to-use-before-you-start-a-project-to-convey-you-can-actually-get-work-done) to answer when starting on any data science project are:
 
