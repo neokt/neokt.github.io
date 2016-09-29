@@ -3,6 +3,7 @@ title: "Turnstile Traffic"
 excerpt: "Exploring MTA turnstile data for a cause"
 header:
   overlay_image: mta1.jpg
+  overlay_filter: 0.2
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 categories:
   - Projects
@@ -24,10 +25,10 @@ In my opinion, the [two hardest questions](http://www.datascienceweekly.org/arti
 - What is the question you want to answer (and the business case for this question)?
 - What data do you plan on using and how will you obtain it?
 
-Thankfully, the project parameters addressed both of those questions - but I imagine that a lot of time will be spent here when embarking on more open ended projects in the future.
+Thankfully, the project parameters addressed both of those questions - but I imagine that a lot of time will be spent here when embarking on more open-ended projects in the future.
 
 ## Project Scoping
-We divided the problem space into two distinct areas for exploration:
+We first divided the problem space into two distinct areas for exploration:
 
 - **Volume** - Maximizing exposure to subway commuters
 - **Conversion** - Optimizing the likelihood of collecting signatures from desirable gala attendees and donors
@@ -35,7 +36,7 @@ We divided the problem space into two distinct areas for exploration:
 We decided to focus exclusively on volume, but given more time would have incorporated additional datasets to address conversion.
 
 ## Tools
-It's worth describing some of the fundamental tools to perform data analysis and visualization using Python (potential for expansion in an upcoming post - Essential Python Libraries for Data Science). While many are likely familiar with these libraries, I will describe my impressions of them here as I intend to reference them frequently in my posts.
+It's worth describing some of the fundamental tools to perform data analysis and visualization using Python (to be expanded on in an upcoming post - Essential Python Libraries for Data Science). While many are likely familiar with these libraries, I will describe my impressions of them here as I intend to reference them frequently.
 
 - **Data Analysis**
     - *NumPy* - NumPy is a linear algebra library for Python. NumPy can be used to perform linear algebra (matrix) operations and many useful math operations.
@@ -57,14 +58,14 @@ It's worth describing some of the fundamental tools to perform data analysis and
     - Time of day
     - Day of week
     - Station
-5. **Creating Meaningful Visualizations** - We wanted to share our findings with others, and a picture speaks a thousand words. Each graph we plotted illustrated a key point. We used Matplotlib to create the first 3 graphs and Seaborn for the heatmap:
+5. **Creating Meaningful Visualizations** - We wanted to share our findings with others, and as the old adage goes, a picture speaks a thousand words. Each graph we plotted illustrated a key point. We used Matplotlib to create the first 3 graphs and Seaborn for the last:
     - A histogram to illustrate that a small number of stations account for a disproportionately large share of the traffic
     - A stacked bar graph to illustrate the total volume of entries/exits for the highest volume stations
     - A line graph to illustrate how volumes vary by day of the week for each of the highest volume stations
     - A heatmap to illustrate how volumes vary by time of the day for each of the highest volume stations
 
 ## Recommendations
-To provide actionable recommendations, we would need to consider the limited resources that a non-profit may have. Our data led us to very specific recommendations on shift prioritization purely based on the volumes we were seeing. In order of magnitude, these were:
+To provide actionable recommendations, we would need to consider the limited resources that a non-profit may have. Our data led us to very specific recommendations on shift prioritization purely based on the volume we were seeing in the data. In order of magnitude, these were:
 
 1. 42nd Street - Grand Central Station from 4PM-8PM, Mon-Fri
 2. 34th Street - Herald Square from 4PM-8PM, Mon-Fri
@@ -79,7 +80,7 @@ Unsurprisingly, large commuter hubs and the weekday rush hour drove the bulk of 
 ## Thoughts on Improvement
 There were two notable areas in which we could have improved our analysis:
 
-- **Refining deployment locations** - We had a logical inclination that people who are static are more likely to pay attention to solicitors, so we thought about how we would use additional data to refine our placement around [coffee shops](https://data.ny.gov/Economic-Development/Retail-Food-Stores-Map/p2dn-xhaw), [station platforms](https://osc.state.ny.us/audits/allaudits/093016/14s23.pdf), and even smoking stops.
+- **Refining deployment locations** - We had a theory that people who are static are more likely to pay attention to solicitors, so we thought about how we would use additional data to refine our placement around [coffee shops](https://data.ny.gov/Economic-Development/Retail-Food-Stores-Map/p2dn-xhaw), [station platforms](https://osc.state.ny.us/audits/allaudits/093016/14s23.pdf), and even smoking stops.
 - **Incorporating Conversion** - While we didn't have time to incorporate additional datasets to support hypotheses on conversion, we could have inserted relative assumptions. These could include hypotheses such as 'people may be more likely to stop on the weekends', or that 'people who work at (and are proximate to) tech companies may be more sympathetic to the cause'. Additional data that we would have incorporated would involve concentrations of desirable sociodemographics, professions, residents (vs. tourists vs. transit commuters) and political donations.
 
 ## Takeaways
