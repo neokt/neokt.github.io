@@ -65,12 +65,15 @@ Traffic was highly concentrated in a handful of stations; a few outlying station
 ![Traffic by station][chart1]
 
 
+
 We identified the top 10 stations by volume of entries and exits; unsurprisingly, large commuter stations like Grand Central and 34th Street Herald Square topped the list. The top 10 stations accounted for approximately 15.5% of overall traffic for the month of May 2016.
 ![Top 10 stations][chart2]
 
 
+
 Looking at traffic by the day of the week, it became apparent that weekday traffic far surpassed weekend traffic - weekday daily averages were 1.9x higher than weekend averages and comprised 83% of total weekly volumes. In order to maximize exposure, we decided to exclusively focus on weekdays.
 ![Weekday vs. weekend volume][chart3]
+
 
 
 Splitting up the traffic into 4 hour time slots, we could see that volume was primarily driven by commuter rush hour traffic, and was particularly high during the 8am-1pm and 4pm-8pm time slots. This effect was especially pronounced for the top two stations.
@@ -82,6 +85,11 @@ Splitting up the traffic into 4 hour time slots, we could see that volume was pr
 [chart4]: https://raw.githubusercontent.com/neokt/neokt.github.io/master/images/mta_turnstile_chart4.png "Volume was primarily driven by commuter rush hour traffic, and was particularly high during the 8am-1pm and 4pm-8pm time slots"
 
 ## Recommendations
+
+![Deployment][chart5]
+
+[chart5]: https://raw.githubusercontent.com/neokt/neokt.github.io/master/images/mta_turnstile_chart5.png "Shift prioritization based on number of resources and time slots"
+
 To provide actionable insights, we would need to consider the limited resources that a non-profit may have. Our data led us to very specific recommendations on shift prioritization purely based on the volume we were seeing in the data. In order of magnitude, these were:
 
 1. 42nd Street - Grand Central Station from 4PM-8PM, Mon-Fri
@@ -94,9 +102,7 @@ To provide actionable insights, we would need to consider the limited resources 
 
 Unsurprisingly, large commuter hubs and the weekday rush hour drove the bulk of the traffic. Without any further data on conversion, we recommended targeting these stations/time slots based on volume alone.
 
-![Deployment][chart5]
 
-[chart5]: https://raw.githubusercontent.com/neokt/neokt.github.io/master/images/mta_turnstile_chart5.png "Shift prioritization based on number of resources and time slots"
 
 ## Thoughts on Improvement
 There were two notable areas in which we could have improved our analysis:
