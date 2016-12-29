@@ -70,12 +70,12 @@ Looking at traffic by the day of the week, it became apparent that weekday traff
 ![alt text][chart3]
 
 Splitting up the traffic into 4 hour time slots, we could see that volume was primarily driven by commuter rush hour traffic, and was particularly high during the 8am-1pm and 4pm-8pm time slots. This effect was especially pronounced for the top two stations.
-![at text][chart 4]
+![alt text][chart4]
 
-[chart1]: mta_turnstile_chart1.png "Traffic was highly concentrated in a handful of stations"
-[chart2]: mta_turnstile_chart2.png "The top 10 stations accounted for approximately 15.5% of overall traffic"
-[chart3]: mta_turnstile_chart3.png "Weekday daily averages were 1.9x higher than weekend averages and comprised 83% of total weekly volumes."
-[chart4]: mta_turnstile_chart4.png "Volume was primarily driven by commuter rush hour traffic, and was particularly high during the 8am-1pm and 4pm-8pm time slots"
+[chart1]: https://github.com/neokt/neokt.github.io/tree/master/images/mta_turnstile_chart1.png "Traffic was highly concentrated in a handful of stations"
+[chart2]: https://github.com/neokt/neokt.github.io/tree/master/images/mta_turnstile_chart2.png "The top 10 stations accounted for approximately 15.5% of overall traffic"
+[chart3]: https://github.com/neokt/neokt.github.io/tree/master/images/mta_turnstile_chart3.png "Weekday daily averages were 1.9x higher than weekend averages and comprised 83% of total weekly volumes."
+[chart4]: https://github.com/neokt/neokt.github.io/tree/master/images/mta_turnstile_chart4.png "Volume was primarily driven by commuter rush hour traffic, and was particularly high during the 8am-1pm and 4pm-8pm time slots"
 
 ## Recommendations
 To provide actionable insights, we would need to consider the limited resources that a non-profit may have. Our data led us to very specific recommendations on shift prioritization purely based on the volume we were seeing in the data. In order of magnitude, these were:
@@ -90,8 +90,8 @@ To provide actionable insights, we would need to consider the limited resources 
 
 Unsurprisingly, large commuter hubs and the weekday rush hour drove the bulk of the traffic. Without any further data on conversion, we recommended targeting these stations/time slots based on volume alone.
 
-!alt text[chart 5]
-[chart5]: mta_turnstile_chart5.png "Shift prioritization based on number of resources and time slots"
+![alt text][chart 5]
+[chart5]: https://github.com/neokt/neokt.github.io/tree/master/images/mta_turnstile_chart5.png "Shift prioritization based on number of resources and time slots"
 
 ## Thoughts on Improvement
 There were two notable areas in which we could have improved our analysis:
