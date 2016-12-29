@@ -1,6 +1,5 @@
 ---
 title: "Turnstile Traffic"
-excerpt: "Exploring MTA turnstile data for a cause"
 header:
   overlay_image: mta1.jpg
   overlay_filter: 0.2
