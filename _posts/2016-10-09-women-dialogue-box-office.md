@@ -16,11 +16,11 @@ tags:
 modified: 2016-10-09
 ---
 
-For my second project at Metis, I decided to put a twist on a classic regression problem to explore the impact of women on box office revenue. 
+For my second project at Metis, I decided to put a twist on a classic regression problem and explore the impact of women on box office revenue. 
 
 I’ve always been conscious of the portrayal of women in film and popular culture. As a fan of sci-fi and action movie franchises, it bothers me that women are consistently underrepresented in these types of films or relegated to love interests with little to no character development.
 
-There has been an increasing amount of media attention dedicated to the unequal treatment of women in Hollywood, such as the [gender wage gap](http://www.forbes.com/sites/maddieberg/2015/11/12/everything-you-need-to-know-about-the-hollywood-pay-gap). Movie power brokers (who are overwhelmingly men) claim that audiences don’t like movies with strong female characters, and tend to invest less in movies made by and starring women. This is distinctly unfair, and I sought to answer two main questions:
+There has been an increasing amount of media attention dedicated to the unequal treatment of women in Hollywood, most recently the [gender wage gap](http://www.forbes.com/sites/maddieberg/2015/11/12/everything-you-need-to-know-about-the-hollywood-pay-gap). Movie power brokers (who are overwhelmingly men) claim that audiences don’t like movies with strong female characters, and tend to invest less in movies made by and starring women. This is distinctly unfair, and I sought to answer two main questions:
 
 1. Can data confirm the anecdotes about gender bias?
 
@@ -37,18 +37,18 @@ The Bechdel test has its flaws – films with strong female protagonists or femi
 
 In April 2016, [Polygraph](http://polygraph.cool/), a site dedicated to data journalism, released the self proclaimed [“Largest Ever Analysis of Film Dialogue by Gender”](http://polygraph.cool/films/). This included their full dataset, which listed the number of all male and female words spoken in a film, compiled from publicly available screenplays.
 
-With both of these wonderful datasets, coupled with the vast array of movie data available from Box Office Mojo and the OMDB API, I was well equipped to engineer gender-related features to include in my regression model!
+With both of these wonderful datasets, coupled with the vast array of movie data available from the web, I was confident that I could find the answers to my questions with data science and machine learning!
 
 **Approach and Findings**
 
 Feel free to check out my code on [my github](https://github.com/neokt/women-dialogue-box-office)!
 
-1. **Web scraping and data acquisition** - My data was acquired through a combination of web scraping, APIs and direct acquisition. All data was stored in Pandas dataframes with Pickle, a library to serialize and save Python object structures.
+1. **Acquring data** - My data was acquired through a combination of web scraping, APIs and direct acquisition. All data was stored in Pandas dataframes with Pickle, a library to serialize and save Python object structures.
   ![Data sources and features][chart1]
   - I started by scraping general movie data from 1980-2016 (including domestic total gross numbers) from [Box Office Mojo](http://www.boxofficemojo.com/) using Beautiful Soup, a Python web scraping library. This involved a multi-step scraping process to obtain the URLs for each movie and pull individual results for each movie URL. This resulted in records for 14,269 movies.
   - I then scraped [bechdeltest.com](http://bechdeltest.com/) with Beautiful Soup for Bechdel test results, which resulted in 5,420 records.
-  - I then read in and stored the data for the 2000 movies in the Polygraph film dialogue dataset (which Matthew Daniels has generously made available on [github](https://github.com/matthewfdaniels/scripts)), aggregating the data to calculate the % of words spoken by female characters per movie.
-  - Finally, I queried the OMDB API for the 2000 films in the Polygraph dataset, which helped to supplement the general movie data I had initially acquired from Box Office Mojo with more granular detail on genre, country, language, writers, directors, awards, ratings, etc.
+  - I then read in and stored the data for the 2,000 movies in the Polygraph film dialogue dataset (which Matthew Daniels has generously made available on [github](https://github.com/matthewfdaniels/scripts)), aggregating the data to calculate the % of words spoken by female characters per movie.
+  - Finally, I queried the OMDB API for the 2,000 films in the Polygraph dataset, which helped to supplement the general movie data I had initially acquired from Box Office Mojo with more granular detail on genre, country, language, writers, directors, awards, ratings, etc.
 
 2. **Data joining, munging and wrangling** - After merging all 4 data sources I ended up with 1,117 complete records. While this was a far cry from my largest dataset at 14,269 records, I felt strongly that I didn't want to include partial data given the importance of each of the data sources. Further wrangling activities included:
   - Dropping overlapping columns (e.g., between those pulled from Box Office Mojo and OMDB API)
@@ -56,9 +56,10 @@ Feel free to check out my code on [my github](https://github.com/neokt/women-dia
   - Removing duplicates
   - Changing datatypes for dates and numerical values
   - Identifying and removing outliers that might skew results
+   
    When all was said and done, my compiled dataset consisted of 662 records!
 
-3. **Feature engineering** - In addition to general cleanup activities, I engineered some features such that they could be better used in the model and/or be indicative of gender. This included:
+3. **Feature engineering** - In addition to the cleanup activities above, I engineered features and targets such that they could be better used in the model and/or be indicative of gender. This included:
   - Using the python package Genderizer to help impute the gender of the director, writer, and (lead) actors
   - Using regular expressions to obtain a numerical representation of award wins and nominations, based on a text blurb
   - Calculating ROI as domestic total gross over production budget, to account for the strong correlation between the two
@@ -68,6 +69,7 @@ Feel free to check out my code on [my github](https://github.com/neokt/women-dia
   - From my compiled dataset, only 25% of lead actors, 7.5% of writers, and 4% of directors were female
   - The median of words spoken by females as a % of total dialogue was only 26%
   - 50% of films in my dataset passed the Bechdel test
+
    ![Exploring interactions][chart3]
   - To make sure the gender impact wasn’t entirely driven by other features, I plotted a correlation heatmap to explore any potential interactions. I thought that my gender features might be highly correlated with genre, but that wasn't the case. The gender variables were all moderately positively correlated with each other; as might be expected, a film that has a high ratio of female dialogue is also probably likely to pass the Bechdel test.
 
