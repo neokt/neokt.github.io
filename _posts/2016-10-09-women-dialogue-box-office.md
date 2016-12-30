@@ -33,7 +33,7 @@ There has been an increasing amount of media attention dedicated to the unequal 
 The [Bechdel test](http://bechdeltest.com/) (popularized in 1985 by comic strip [Dykes to Watch Out For](http://alisonbechdel.blogspot.com/2005/08/rule.html)) is a simple test that has often been used to call attention to gender bias in movie making. A film passes a test if it a) has at least two (named) women in it, who b) talk to each other, about 
 c) something besides a man. As you may imagine, a good number of films do not pass the test (currently 42.35% of the bechdeltest.com database).
 
-The Bechdel test has its flaws – films with strong female protagonists or feminist themes occasionally fail the test, such as Ex Machina. However, it is mostly a reliable indicator as to whether women are “humanized” if they actively drive the narrative and are not just props.
+The Bechdel test has its flaws – films with strong female protagonists and feminist themes occasionally fail the test (e.g., Ex Machina). However, it is mostly a reliable indicator as to whether women are “humanized” if they actively drive the narrative and are not just props.
 
 In April 2016, [Polygraph](http://polygraph.cool/), a site dedicated to data journalism, released the self proclaimed [“Largest Ever Analysis of Film Dialogue by Gender”](http://polygraph.cool/films/). This included their full dataset, which listed the number of all male and female words spoken in a film, compiled from publicly available screenplays.
 
@@ -71,7 +71,7 @@ Feel free to check out my code on [my github](https://github.com/neokt/women-dia
   - 50% of films in my dataset passed the Bechdel test
 
    ![Exploring interactions][chart3]
-   To make sure the gender impact wasn’t entirely driven by other features, I plotted a correlation heatmap to explore any potential interactions. I thought that my gender features might be highly correlated with genre, but that wasn't the case. The gender variables were all moderately positively correlated with each other; as might be expected, a film that has a high ratio of female dialogue is also probably likely to pass the Bechdel test.
+   To make sure the gender impact wasn’t entirely driven by other features, I plotted a correlation heatmap to explore any potential interactions. I thought that my gender features might be highly correlated with genre, but that wasn't the case. The gender features were all moderately positively correlated with each other; as might be expected, a film that has a high ratio of female dialogue is also probably likely to pass the Bechdel test.
 
 5. **Modeling** - I performed several modeling iterations with different regression models and different subsets of the data, using the machine learning python packages StatsModels and Scikit-learn. I attempted to predict Domestic Total Gross, Domestic ROI, Tomato Meter (Rotten Tomatoes Rankings) and Awards (proxied by sum of wins and nominations), where possible using grid search to optimize.
   ![Modeling and results][chart4]
@@ -89,6 +89,6 @@ Feel free to check out my code on [my github](https://github.com/neokt/women-dia
 
 Based on my results, there is no evidence to support that lead actresses, an increased proportion of female dialogue, or films made by women lead to lower returns. With $22 million per film in domestic total gross as the cost of objectifying women, Hollywood *needs* to actively take a stand to increase the role of women in film! 
 
-I'm personally really looking forward to the upcoming Wonder Woman and Ocean's Eight movies, amongst others - Ghostbusters was a step in the right direction, and I can't wait to see more female protagonists on the big screen!
+I'm personally really looking forward to the upcoming Wonder Woman and Ocean's Eight movies, amongst others. Ghostbusters was a step in the right direction, and I can't wait to see more female protagonists on the big screen!
 
-Questions about my analysis? Feel free to check out [my github](https://github.com/neokt/women-dialogue-box-office) or send me an e-mail at <neo.kaiting@gmail.com>!
+Questions about my analysis? Feel free to check out [my github](https://github.com/neokt/women-dialogue-box-office) or send me an e-mail at <neo.kaiting@gmail.com>.
