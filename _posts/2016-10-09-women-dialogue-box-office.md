@@ -33,7 +33,7 @@ There has been an increasing amount of media attention dedicated to the unequal 
 The [Bechdel test](http://bechdeltest.com/) (popularized in 1985 by comic strip [Dykes to Watch Out For](http://alisonbechdel.blogspot.com/2005/08/rule.html)) is a simple test that has often been used to call attention to gender bias in movie making. A film passes a test if it a) has at least two (named) women in it, who b) talk to each other, about 
 c) something besides a man. As you may imagine, a good number of films do not pass the test (currently 42.35% of the bechdeltest.com database).
 
-The Bechdel test has its flaws – films with strong female protagonists and feminist themes occasionally fail the test (e.g., Ex Machina). However, it is mostly a reliable indicator as to whether women are “humanized” if they actively drive the narrative and are not just props.
+The Bechdel test has its flaws – films with strong female protagonists and feminist themes occasionally fail the test (e.g., one of my favorites, Ex Machina). However, it is mostly a reliable indicator as to whether women are “humanized” if they actively drive the narrative and are not just props.
 
 In April 2016, [Polygraph](http://polygraph.cool/), a site dedicated to data journalism, released the self proclaimed [“Largest Ever Analysis of Film Dialogue by Gender”](http://polygraph.cool/films/). This included their full dataset, which listed the number of all male and female words spoken in a film, compiled from publicly available screenplays.
 
