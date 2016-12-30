@@ -43,14 +43,14 @@ With both of these wonderful datasets, coupled with the vast array of movie data
 
 Feel free to check out my code on [my github](https://github.com/neokt/women-dialogue-box-office)!
 
-**1. Acquring data** - My data was acquired through a combination of web scraping, APIs and direct acquisition. All data was stored in Pandas dataframes with Pickle, a library to serialize and save Python object structures.
+1. **Acquring data** - My data was acquired through a combination of web scraping, APIs and direct acquisition. All data was stored in Pandas dataframes with Pickle, a library to serialize and save Python object structures.
   ![Data sources and features][chart1]
   * I started by scraping general movie data from 1980-2016 (including domestic total gross numbers) from [Box Office Mojo](http://www.boxofficemojo.com/) using Beautiful Soup, a Python web scraping library. This involved a multi-step scraping process to obtain the URLs for each movie and pull individual results for each movie URL. This resulted in records for 14,269 movies.
   * I then scraped [bechdeltest.com](http://bechdeltest.com/) with Beautiful Soup for Bechdel test results, which resulted in 5,420 records.
   * I then read in and stored the data for the 2,000 movies in the Polygraph film dialogue dataset (which Matthew Daniels has generously made available on [github](https://github.com/matthewfdaniels/scripts)), aggregating the data to calculate the % of words spoken by female characters per movie.
   * Finally, I queried the OMDB API for the 2,000 films in the Polygraph dataset, which helped to supplement the general movie data I had initially acquired from Box Office Mojo with more granular detail on genre, country, language, writers, directors, awards, ratings, etc.
 
-**2. Data joining, munging and wrangling** - After merging all 4 data sources I ended up with 1,117 complete records. While this was a far cry from my largest dataset at 14,269 records, I felt strongly that I didn't want to include partial data given the importance of each of the data sources. Further wrangling activities included:
+2. **Data joining, munging and wrangling** - After merging all 4 data sources I ended up with 1,117 complete records. While this was a far cry from my largest dataset at 14,269 records, I felt strongly that I didn't want to include partial data given the importance of each of the data sources. Further wrangling activities included:
   * Dropping overlapping columns (e.g., between those pulled from Box Office Mojo and OMDB API)
   * Creating dummy variables for categorical data (e.g., Genre, MPAA rating)
   * Removing duplicates
@@ -59,12 +59,12 @@ Feel free to check out my code on [my github](https://github.com/neokt/women-dia
    
    When all was said and done, my compiled dataset consisted of 662 records!
 
-**3. Feature engineering** - In addition to the cleanup activities above, I engineered features and targets such that they could be better used in the model and/or be indicative of gender. This included:
+3. **Feature engineering** - In addition to the cleanup activities above, I engineered features and targets such that they could be better used in the model and/or be indicative of gender. This included:
   * Using the python package Genderizer to help impute the gender of the director, writer, and (lead) actors
   * Using regular expressions to obtain a numerical representation of award wins and nominations, based on a text blurb
   * Calculating ROI as domestic total gross over production budget, to account for the strong correlation between the two
 
-**4. Exploratory Data Analysis** - I wanted to see if my data would confirm if the gender bias exists in movie making. The results were stark and clear:
+4. **Exploratory Data Analysis** - I wanted to see if my data would confirm if the gender bias exists in movie making. The results were stark and clear:
    ![Exploring the data for gender bias][chart2]
   * From my compiled dataset, only 25% of lead actors, 7.5% of writers, and 4% of directors were female
   * The median of words spoken by females as a % of total dialogue was only 26%
@@ -73,7 +73,7 @@ Feel free to check out my code on [my github](https://github.com/neokt/women-dia
    ![Exploring interactions][chart3]
    To make sure the gender impact wasn’t entirely driven by other features, I plotted a correlation heatmap to explore any potential interactions. I thought that my gender features might be highly correlated with genre, but that wasn't the case. The gender features were all moderately positively correlated with each other; as might be expected, a film that has a high ratio of female dialogue is also probably likely to pass the Bechdel test.
 
-**5. Modeling** - I performed several modeling iterations with different regression models and different subsets of the data, using the machine learning python packages StatsModels and Scikit-learn. I attempted to predict Domestic Total Gross, Domestic ROI, Tomato Meter (Rotten Tomatoes Rankings) and Awards (proxied by sum of wins and nominations), where possible using grid search to optimize.
+5. **Modeling** - I performed several modeling iterations with different regression models and different subsets of the data, using the machine learning python packages StatsModels and Scikit-learn. I attempted to predict Domestic Total Gross, Domestic ROI, Tomato Meter (Rotten Tomatoes Rankings) and Awards (proxied by sum of wins and nominations), where possible using grid search to optimize.
   ![Modeling and results][chart4]
   As this was a noisy (and small!) dataset to begin with, my best performing model predicting Domestic Total Gross was a linear regression model with an R squared of .51. Regularization and the use of decision trees did not improve results. However, my models revealed important information about my features:
   * *High p values and fluctuating coefficients of the gender features* - This suggests that there is no conclusive link between the proportion of female lines, female actors, writers, directors to box office returns - therefore, the assertion that women-driven films are negatively correlated with returns is false.
