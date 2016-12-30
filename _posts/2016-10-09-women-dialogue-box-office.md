@@ -78,7 +78,7 @@ Feel free to check out my code on [my github](https://github.com/neokt/women-dia
   As this was a noisy (and small!) dataset to begin with, my best performing model predicting Domestic Total Gross was a linear regression model with an R squared of .51. Regularization and the use of decision trees did not improve results. However, my models revealed important information about my features:
   - *High p values and fluctuating coefficients of the gender features* - This suggests that there is no conclusive link between the proportion of female lines, female actors, writers, directors to box office returns - therefore, the assertion that women-driven films are negatively correlated with returns is false.
   - *Low p values and consistently large and positive coefficient of the Bechdel test feature* - This suggests that the Bechdel test is statistically significant in predicting box office returns. All things held equal, my models predicted that passing the Bechdel test would increase domestic total gross by $22 million (and ROI by around .20%).
-  - Running the models on subsets of the data and other target variables such as awards (wins + nominations) and ratings echoed these findings.
+  - Running the models on subsets of the data and other target variables highly correlated with returns such as awards  and ratings corroborated these findings
 
 [chart1]: https://raw.githubusercontent.com/neokt/neokt.github.io/master/images/women-dialogue-box-office_chart1.png "Data sources and features"
 [chart2]: https://raw.githubusercontent.com/neokt/neokt.github.io/master/images/women-dialogue-box-office_chart2.png "Exploring the data for gender bias"
@@ -89,6 +89,6 @@ Feel free to check out my code on [my github](https://github.com/neokt/women-dia
 
 Based on my results, there is no evidence to support that lead actresses, an increased proportion of female dialogue, or films made by women lead to lower returns. With $22 million per film in domestic total gross as the cost of objectifying women, Hollywood *needs* to actively take a stand to increase the role of women in film! 
 
-I'm personally really looking forward to the upcoming Wonder Woman and Ocean's Eight movies - Ghostbusters was a step in the right direction, and I can't wait to see more female protagonists on the big screen!
+I'm personally really looking forward to the upcoming Wonder Woman and Ocean's Eight movies, amongst others - Ghostbusters was a step in the right direction, and I can't wait to see more female protagonists on the big screen!
 
 Questions about my analysis? Feel free to check out [my github](https://github.com/neokt/women-dialogue-box-office) or send me an e-mail at <neo.kaiting@gmail.com>!
