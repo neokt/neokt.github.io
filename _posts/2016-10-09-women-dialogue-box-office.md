@@ -30,11 +30,8 @@ There has been an increasing amount of media attention dedicated to the unequal 
 
 **Sources and Inspiration**
 
-The [Bechdel test](http://bechdeltest.com/) (popularized in 1985 by comic strip [Dykes to Watch Out For](http://alisonbechdel.blogspot.com/2005/08/rule.html)) is a simple test that has often been used to call attention to gender bias in movie making. A film passes a test if it 
-a) has at least two (named) women in it, who 
-b) talk to each other, about 
-c) something besides a man. 
-As you may imagine, a good number of films do not pass the test (currently 42.35% of the bechdeltest.com database).
+The [Bechdel test](http://bechdeltest.com/) (popularized in 1985 by comic strip [Dykes to Watch Out For](http://alisonbechdel.blogspot.com/2005/08/rule.html)) is a simple test that has often been used to call attention to gender bias in movie making. A film passes a test if it a) has at least two (named) women in it, who b) talk to each other, about 
+c) something besides a man. As you may imagine, a good number of films do not pass the test (currently 42.35% of the bechdeltest.com database).
 
 The Bechdel test has its flaws – films with strong female protagonists or feminist themes occasionally fail the test, such as Ex Machina. However, it is mostly a reliable indicator as to whether women are “humanized” if they actively drive the narrative and are not just props.
 
@@ -46,7 +43,7 @@ With both of these wonderful datasets, coupled with the vast array of movie data
 
 Feel free to check out my code on [my github](https://github.com/neokt/women-dialogue-box-office)!
 
-1. **Web scraping and data acquisition** - My data was acquired through a combination of web scraping, APIs and direct acquisition. All results were stored as Pandas dataframes using Pickle, a library to serialize and save Python object structures.
+1. **Web scraping and data acquisition** - My data was acquired through a combination of web scraping, APIs and direct acquisition. All data was stored in Pandas dataframes with Pickle, a library to serialize and save Python object structures.
   ![Data sources and features][chart1]
   - I started by scraping general movie data from 1980-2016 (including domestic total gross numbers) from [Box Office Mojo](http://www.boxofficemojo.com/) using Beautiful Soup, a Python web scraping library. This involved a multi-step scraping process to obtain the URLs for each movie and pull individual results for each movie URL. This resulted in records for 14,269 movies.
   - I then scraped [bechdeltest.com](http://bechdeltest.com/) with Beautiful Soup for Bechdel test results, which resulted in 5,420 records.
@@ -59,8 +56,7 @@ Feel free to check out my code on [my github](https://github.com/neokt/women-dia
   - Removing duplicates
   - Changing datatypes for dates and numerical values
   - Identifying and removing outliers that might skew results
-
-  When all was said and done, my compiled dataset consisted of 662 records!
+   When all was said and done, my compiled dataset consisted of 662 records!
 
 3. **Feature engineering** - In addition to general cleanup activities, I engineered some features such that they could be better used in the model and/or be indicative of gender. This included:
   - Using the python package Genderizer to help impute the gender of the director, writer, and (lead) actors
@@ -68,15 +64,14 @@ Feel free to check out my code on [my github](https://github.com/neokt/women-dia
   - Calculating ROI as domestic total gross over production budget, to account for the strong correlation between the two
 
 4. **Exploratory Data Analysis** - I wanted to see if my data would confirm if the gender bias exists in movie making. The results were stark and clear:
-  ![Exploring the data for gender bias][chart2]
+   ![Exploring the data for gender bias][chart2]
   - From my compiled dataset, only 25% of lead actors, 7.5% of writers, and 4% of directors were female
   - The median of words spoken by females as a % of total dialogue was only 26%
   - 50% of films in my dataset passed the Bechdel test
-  
-  ![Exploring interactions][chart3]
+   ![Exploring interactions][chart3]
   - To make sure the gender impact wasn’t entirely driven by other features, I plotted a correlation heatmap to explore any potential interactions. I thought that my gender features might be highly correlated with genre, but that wasn't the case. The gender variables were all moderately positively correlated with each other; as might be expected, a film that has a high ratio of female dialogue is also probably likely to pass the Bechdel test.
 
-5. **Modeling** - I performed severeal modeling iterations with different regression models and different subsets of the data, using the machine learning python packages StatsModels and Scikit-learn. I attempted to predict Domestic Total Gross, Domestic ROI, Tomato Meter (Rotten Tomatoes Rankings) and Awards (proxied by sum of wins and nominations), where possible using grid search to optimize.
+5. **Modeling** - I performed several modeling iterations with different regression models and different subsets of the data, using the machine learning python packages StatsModels and Scikit-learn. I attempted to predict Domestic Total Gross, Domestic ROI, Tomato Meter (Rotten Tomatoes Rankings) and Awards (proxied by sum of wins and nominations), where possible using grid search to optimize.
   ![Modeling and results][chart4]
   As this was a noisy (and small!) dataset to begin with, my best performing model predicting Domestic Total Gross was a linear regression model with an R squared of .51. Regularization and the use of decision trees did not improve results. However, my models revealed important information about my features:
   - *High p values and fluctuating coefficients of the gender features* - This suggests that there is no conclusive link between the proportion of female lines, female actors, writers, directors to box office returns - therefore, the assertion that women-driven films are negatively correlated with returns is false.
@@ -90,6 +85,6 @@ Feel free to check out my code on [my github](https://github.com/neokt/women-dia
 
 **Conclusions**
 
-Based on my results, there is no evidence to support that lead actresses, an increased proportion of female dialogue, or films made by women lead to lower returns. With $22 million per film in domestic total gross as the cost of objectifying women, Hollywood *needs* to actively take a stand to increase the role of women in film!
+Based on my results, there is no evidence to support that lead actresses, an increased proportion of female dialogue, or films made by women lead to lower returns. With $22 million per film in domestic total gross as the cost of objectifying women, Hollywood *needs* to actively take a stand to increase the role of women in film! I'm personally really looking forward to the upcoming Wonder Woman and Ocean's Eight movies - and looking forward to the day when we can talk about them as "superhero" and "heist" movies without the "female" preface.
 
 Questions about my analysis? Feel free to check out [my github](https://github.com/neokt/women-dialogue-box-office) or send me an e-mail at <neo.kaiting@gmail.com>!
