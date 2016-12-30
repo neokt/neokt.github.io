@@ -89,6 +89,6 @@ Feel free to check out my code on [my github](https://github.com/neokt/women-dia
 
 Based on my results, there is no evidence to support that lead actresses, an increased proportion of female dialogue, or films made by women lead to lower returns. With $22 million per film in domestic total gross as the cost of objectifying women, Hollywood *needs* to actively take a stand to increase the role of women in film! 
 
-I'm personally really looking forward to the upcoming Wonder Woman and Ocean's Eight movies - and looking forward to the day when we can talk about them as "superhero" and "heist" movies without the "female" preface.
+I'm personally really looking forward to the upcoming Wonder Woman and Ocean's Eight movies - Ghostbusters was a step in the right direction, and I can't wait to see more female protagonists on the big screen!
 
 Questions about my analysis? Feel free to check out [my github](https://github.com/neokt/women-dialogue-box-office) or send me an e-mail at <neo.kaiting@gmail.com>!
