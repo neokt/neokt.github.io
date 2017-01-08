@@ -153,11 +153,11 @@ Playlist | Mood Map Visualization | Top Moods
 
 Currently, my app is a prototype and does not have the full functionality that I'd like for a consumer facing utility. Some improvements that could be made:
 
-- Improve UI and make backend more robust to live predictions
+- Make backend more robust to live predictions (e.g., storing features and predictions in PostgreSQL database)
 - Incorporate Spotify user logins so user's can import their own playlists
-- Incorporate additional interactivity and data views
+- Incorporate additional interactivity and mood statistics
 
-For modeling, scaled audio features turned out to be the strongest predictors of mood using a random forest classifier. With additional time, I would attempt to tune my hyperparameters to improve the performance of my gradient boosted trees and XGBoost models to see if these could outperform the random forest.
+For modeling, scaled audio features turned out to be the strongest predictors of mood using a random forest classifier. With additional time, I would attempt to tune my hyperparameters to improve the performance of my gradient boosted trees and XGBoost models to see if these could outperform the random forest model.
 
 For future classification work, I'd like to try more creative feature engineering on a binary problem and be able to plot precision-recall and ROC curves to evaluate my classification metrics. 
 
