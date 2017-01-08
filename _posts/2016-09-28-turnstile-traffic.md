@@ -2,7 +2,7 @@
 title: "Turnstile Traffic"
 excerpt: "Exploring MTA turnstile data for a cause"
 header:
-  overlay_image: mta1.jpg
+  overlay_image: mta_turnstile_splash.jpg
   overlay_filter: 0.2
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 categories:
