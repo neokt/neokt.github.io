@@ -8,12 +8,16 @@ header:
 categories:
   - Projects
 tags:
-  - webscraping
-  - beautiful soup
   - apis
-  - exploratory data analysis
-  - regression
-modified: 2016-12-30
+  - classification
+  - random forests
+  - precision
+  - recall
+  - gradient boosted trees
+  - xgboost
+  - flask
+  - visualization
+modified: 2017-01-08
 ---
 
 My third project at Metis consisted of diving into the wonderful worlds of APIs and classification metrics. But mostly, it was about facing the music... *cue cheesiness!*
