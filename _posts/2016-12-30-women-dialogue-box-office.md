@@ -2,7 +2,7 @@
 title: "Women, Dialogue and the Box Office"
 excerpt: "The case for Hollywood to make films that humanize women"
 header:
-  overlay_image: womeninfilm.jpg
+  overlay_image: women-dialogue-box-office_splash.jpg
   overlay_filter: 0.2
   caption: "Photo credit: [**Unsplash**](https://unsplash.com)"
 categories:
