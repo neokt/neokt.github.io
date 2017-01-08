@@ -1,6 +1,6 @@
 ---
 title: "Audio Music Mood Classification"
-excerpt: "Using a multinomial classification approach to predict song moods"
+excerpt: "Using a multinomial classification approach to predict mood"
 header:
   overlay_image: audio-music-mood-classification_splash.jpg
   overlay_filter: 0.2
@@ -120,7 +120,7 @@ The two 5-class random forest models individually did much better than the 25-cl
 
 [chart3]: https://raw.githubusercontent.com/neokt/neokt.github.io/master/images/audio-music-mood-classification_chart3.png "Results"
 
-Comparing the results results in a confusion matrix, both approaches showed a pattern in the true positive/true negative diagonal, with the 25-class approach showing a slightly stronger pattern. I decided to move forward with my 25-class Random Forest model as a result of these findings.
+Comparing the results results in a confusion matrix, both approaches showed a pattern in the true positive/true negative diagonal, with the 25-class approach showing a slightly stronger pattern. I decided to move forward with my 25-class random forest model as a result of these findings.
 
 Approaching this again, I may have used a weighted scoring method to evaluate the approaches based on how proximate the predicted moods were to the actual moods in the taxonomy. For example, the 25-class model tended to predict "Energizing" as "Excited" moods and vice versa, which are both high on the "arousal" scale of the taxonomy. 
 
@@ -134,13 +134,20 @@ After a user inputs a Spotify playlist ID on the landing page, the app accesses 
 
 [screenshot1]: https://raw.githubusercontent.com/neokt/audio-music-mood-classification/master/screenshots/example00-landing_page.png "Landing screenshot"
 
-Here are some screenshots of the mood maps that my app generated using some of Spotify's popular playlists!
+Here are some screenshots of the mood maps that my app generated using some of Spotify's popular playlists - click to view in full size!
 
 Playlist | Mood Map Visualization | Top Moods
 |:---:|:---:|:---:|
-![](https://raw.githubusercontent.com/neokt/audio-music-mood-classification/master/screenshots/example02-mood_booster_playlist.png) |  ![](https://raw.githubusercontent.com/neokt/audio-music-mood-classification/master/screenshots/example02-mood_booster_mood_map.png) | Mood Booster - Mostly excited, energizing, yearning
-![](https://raw.githubusercontent.com/neokt/audio-music-mood-classification/master/screenshots/example03-state_of_mind_playlist.png) |  ![](https://raw.githubusercontent.com/neokt/audio-music-mood-classification/master/screenshots/example03-state_of_mind_mood_map.png) | State of Mind - Mostly cool, sensual, defiant
-![](https://raw.githubusercontent.com/neokt/audio-music-mood-classification/master/screenshots/example04-90s_baby_makers_playlist.png) |  ![](https://raw.githubusercontent.com/neokt/audio-music-mood-classification/master/screenshots/example04-90s_baby_makers_mood_map.png) |  90's Baby Makers - Overwhelming sensual!
+[![Mood booster playlist][screenshot01]][screenshot01] |  [![Mood booster mood map][screenshot02]][screenshot02]  | Mostly excited, energizing, yearning
+[![State of mind playlist][screenshot03]][screenshot03] |  [![State of mind mood map][screenshot04]][screenshot04] | Mostly cool, sensual, defiant
+[![90s baby makers playlist][screenshot05]][screenshot05] |  [![90s baby makers mood map][screenshot06]][screenshot06] |  Overwhelming sensual!
+
+[screenshot01]: https://raw.githubusercontent.com/neokt/audio-music-mood-classification/master/screenshots/example02-mood_booster_playlist.png "Mood booster playlist"
+[screenshot02]: https://raw.githubusercontent.com/neokt/audio-music-mood-classification/master/screenshots/example02-mood_booster_mood_map.png "Mood booster mood map"
+[screenshot03]: https://raw.githubusercontent.com/neokt/audio-music-mood-classification/master/screenshots/example03-state_of_mind_playlist.png "State of mind playlist"
+[screenshot04]: https://raw.githubusercontent.com/neokt/audio-music-mood-classification/master/screenshots/example03-state_of_mind_mood_map.png "State of mind mood map"
+[screenshot05]: https://raw.githubusercontent.com/neokt/audio-music-mood-classification/master/screenshots/example04-90s_baby_makers_playlist.png "90s baby makers playlist"
+[screenshot06]: https://raw.githubusercontent.com/neokt/audio-music-mood-classification/master/screenshots/example04-90s_baby_makers_mood_map.png "90s baby makers mood map"
 
 **Future Work**
 
