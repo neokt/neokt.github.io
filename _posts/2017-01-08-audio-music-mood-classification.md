@@ -20,15 +20,15 @@ tags:
 modified: 2017-01-08
 ---
 
-My third project at Metis consisted of diving into the wonderful worlds of APIs and classification metrics. But mostly, it was about facing the music... *cue cheesiness!*
+My third project at Metis consisted of diving into the wonderful worlds of APIs and classification metrics. But mostly, it was about facing the music... 
 
-Music accompanies us on every aspect of our lives. It enhances our activities, whether it be work, play or rest. I was interested in predicting how music evokes feelings as I feel that it is the common denominator of shared experience for all music consumers. With individual songs tied to mood labels, it seemed feasible to be able to use audio features to predict the mood of a song.
+Music accompanies us on every aspect of our lives. It enhances our activities, whether it be work, play or rest. I was interested in predicting how music evokes feelings, as the common denominator of shared experience for all music consumers. With individual songs tied to mood labels, it seemed feasible to be able to use audio features to predict the mood of a song.
 
 There are many reasons why there would be a business case for this sort of problem - after all, moods and emotions are often what drive consumer purchasing decisions, which would be well within a record label, streaming provider or brand manager's purview. Some possible use cases of these predictions fall into two categories:
 
-- Association with music - for many consumer facing companies (e.g., retail, restaurants), music is part of a brand's identity. Mood classification can help to determine what kinds of songs evoke the brand's image, and help create atmosphere for spaces and events.
+- Association with music: For many consumer facing companies (e.g., retail, restaurants), music is part of a brand's identity. Mood classification can help to determine what kinds of songs evoke a brand's image, and help create atmosphere for spaces and events.
 
-- The music industry - mood classification is increasingly becoming its bread and butter; identification of moods can help with music recommendations, label/artist management, assembling music metadata and creating album, artist or playlist mood profiles.
+- The music industry: Mood classification is increasingly becoming its bread and butter; identification of moods can help with music recommendations, label/artist management, assembling music metadata and creating album, artist or playlist mood profiles.
 
 I chose to hone in on the concept of mood profiles for my project - could we use the predictions to create a mood profile for a potential streaming music service user and accurately represent their tastes?
 
@@ -87,9 +87,9 @@ songs = get_songs(playlists)
 
 I then used the song IDs to query Spotify for audio features and other track metadata for each song, such as popularity and explicitness, joining all of the information in a Pandas dataframe.
 
-One of the things that was important to me was being able to compile audio metadata across different sources; and as such, being able to tie song records to each other was key. Unfortunately, no other music data sources besides Billboard conveniently had Spotify ID information, and as such I needed to use artist-song matching to compile the rest of the database. From Gracenote, I was able to use use my Spotify database of songs as a starting point to query additional metadata such as genre, artist information, and most importantly, mood labels.
+One of the things that was important to me was being able to compile audio metadata across different sources; and as such, being able to tie song records to each other was key. Unfortunately, no other music data sources besides Billboard had Spotify ID information, and as such I needed to use artist-song matching to compile the rest of the database. From Gracenote, I was able to use use my Spotify database of songs as a starting point to query additional metadata such as genre, artist information, and most importantly, mood labels.
 
-These mood labels were to be my targets; I chose to predict Gracenote's Level 1 moods, which contained descriptors such as "Aggressive" and "Yearning". This was going to be an interesting 25-class classification problem! I lost some song records to the imperfect match, and had to drop or impute missing values to ensure the quality of my database. At the end, my final database consisted of over 21,000 songs with 69 potential features.
+I chose to classify songs based on Gracenote's Level 1 moods, which contained descriptors such as "Aggressive" and "Yearning". This was going to be an interesting 25-class classification problem! I lost some song records to the imperfect match, and had to drop or impute missing values to ensure the quality of my database. At the end, my final database consisted of over 21,000 songs with 69 potential features.
 
 ![Song features and labels][chart1]
 
@@ -103,42 +103,44 @@ I initially experimented with several classifiers in the Scikit-learn toolkit, i
 
 One technique to evaluate features is to add random noise variables to a model and see which features are more predictive than random noise. Of my 69 features, 10 audio features and track popularity emerged as being the most important using this method. Surprisingly, genre and explicitness turned out to be less predictive of mood than random noise!
 
-I chose to compare these results across different ensemble method - random forests, gradient boosted trees and the Kaggle-winning XGBoost. Without much tuning, my random forests had the best results at .37 precision; this meant that of the predictions for a certain class, 37% were actually relevant. This was decent for a 25-class problem, but could we do better?
+I chose to compare these results across different ensemble method - random forests, gradient boosted trees and the Kaggle-winning XGBoost. Without much tuning, my random forests had the best results with a precision metric of .37; this meant that of the predictions for a certain class, 37% were actually relevant. This was decent for a 25-class problem, but could we do better?
 
 **A Method (or Mood) to the Madness**
 
-By treating the 25 moods as being independent of each other, I was omitting important information - that the moods were related to each other in a taxonomy, based on Gracenote's documentation. By treating points on the arousal-positivity scale as separate classes, I tried a different approach by separately predicting level of arousal and level of positivity, and then using that to triangulate the mood class.
+By treating the 25 moods as being independent of each other, I was omitting important information - that the moods were related to each other in a taxonomy, based on Gracenote's documentation. By treating points on the arousal-positivity scale as 5 separate classes, I tried a different approach by separately predicting level of arousal and level of positivity, and then using that to triangulate the mood class. 
 
 ![Mood taxonomy][chart2]
 
 [chart2]: https://raw.githubusercontent.com/neokt/neokt.github.io/master/images/audio-music-mood-classification_chart2.png "Mood taxonomy"
 
-The individual models did much better than the 25-class problem; my arousal model had .57 precision and my positivity model had .48 precision. However, combined, they resulted in a .35 precision in mood prediction which wasn't better than treating the moods as individual classes.
+The two 5-class random forest models individually did much better than the 25-class random forest model; my arousal model had .57 precision and my positivity model had .48 precision. However, the combined result was .35 precision in mood prediction which wasn't an improvement over the 25-class model.
 
 **Final Results and Thoughts on Modeling**
 ![Results][chart3]
 
 [chart3]: https://raw.githubusercontent.com/neokt/neokt.github.io/master/images/audio-music-mood-classification_chart3.png "Results"
 
-Comparing the results results in a confusion matrix, both approaches showed a pattern in the true positive/true negative diagonal, with the 25-class approach showing a slightly stronger pattern. Approaching this again, I may have used a weighted scoring method to evaluate the approaches based on how proximate the predicted moods were to the actual moods in the taxonomy. For example, the 25-class model tended to predict "Energizing" as "Excited" moods and vice versa, which are both high on the "arousal" scale of the taxonomy. I decided to move forward with my 25-class Random Forest model as a result of these findings.
+Comparing the results results in a confusion matrix, both approaches showed a pattern in the true positive/true negative diagonal, with the 25-class approach showing a slightly stronger pattern. I decided to move forward with my 25-class Random Forest model as a result of these findings.
+
+Approaching this again, I may have used a weighted scoring method to evaluate the approaches based on how proximate the predicted moods were to the actual moods in the taxonomy. For example, the 25-class model tended to predict "Energizing" as "Excited" moods and vice versa, which are both high on the "arousal" scale of the taxonomy. 
 
 **Production**
 
-My goal was to use my predictions to create a dynamic visualization that would enable a user to see the mood profiles of their spotify playlists. I built a web app using [Flask](http://flask.pocoo.org/) that would take in a Spotify playlist ID as input and return a colorful mood map based on my model predictions.
+My goal was to use my predictions to create a dynamic visualization that would enable a user to see the mood profiles of their spotify playlists. I built a web app using [Flask](http://flask.pocoo.org/) that would take in a Spotify playlist ID as input and return a colorful mood map generated using Matplotlib and Seaborn, based on my model's predictions.
 
-After a user inputs a Spotify playlist ID on the landing page, the app accesses the Spotify API to identify the playlist tracks and either pulls the relevant audio features from the API or pulls the features/predictions from my database if they have been stored before. My model would then use these features to predict the moods for each song, which would then be used to plot the mood map for the playlist.
+After a user inputs a Spotify playlist ID on the landing page, the app accesses Spotify's API to identify the playlist tracks and either pulls the relevant audio features from the API or pulls the features/predictions from my database if they have been stored before. My trained model then uses these features to predict the moods for each song, and the app returns the mood map as an image.
 
 ![Landing screenshot][screenshot1]
 
 [screenshot1]: https://raw.githubusercontent.com/neokt/audio-music-mood-classification/master/screenshots/example00-landing_page.png "Landing screenshot"
 
-Here are some examples of mood maps that my app generated using some of Spotify's playlists!
+Here are some screenshots of the mood maps that my app generated using some of Spotify's popular playlists!
 
-|Playlist| Mood Map Visualization |
-|:---:|:---:|
-Mood Booster ![](https://raw.githubusercontent.com/neokt/audio-music-mood-classification/master/screenshots/example02-mood_booster_playlist.png) | Mostly excited, energizing, yearning ![](https://raw.githubusercontent.com/neokt/audio-music-mood-classification/master/screenshots/example02-mood_booster_mood_map.png)
-State of Mind![](https://raw.githubusercontent.com/neokt/audio-music-mood-classification/master/screenshots/example03-state_of_mind_playlist.png) | Mostly cool, sensual, defiant ![](https://raw.githubusercontent.com/neokt/audio-music-mood-classification/master/screenshots/example03-state_of_mind_mood_map.png)
-90's Baby Makers![](https://raw.githubusercontent.com/neokt/audio-music-mood-classification/master/screenshots/example04-90s_baby_makers_playlist.png) | Overwhelming sensual! ![](https://raw.githubusercontent.com/neokt/audio-music-mood-classification/master/screenshots/example04-90s_baby_makers_mood_map.png)
+Playlist | Mood Map Visualization | Top Moods
+|:---:|:---:|:---:|
+![](https://raw.githubusercontent.com/neokt/audio-music-mood-classification/master/screenshots/example02-mood_booster_playlist.png) |  ![](https://raw.githubusercontent.com/neokt/audio-music-mood-classification/master/screenshots/example02-mood_booster_mood_map.png) | Mood Booster - Mostly excited, energizing, yearning
+![](https://raw.githubusercontent.com/neokt/audio-music-mood-classification/master/screenshots/example03-state_of_mind_playlist.png) |  ![](https://raw.githubusercontent.com/neokt/audio-music-mood-classification/master/screenshots/example03-state_of_mind_mood_map.png) | State of Mind - Mostly cool, sensual, defiant
+![](https://raw.githubusercontent.com/neokt/audio-music-mood-classification/master/screenshots/example04-90s_baby_makers_playlist.png) |  ![](https://raw.githubusercontent.com/neokt/audio-music-mood-classification/master/screenshots/example04-90s_baby_makers_mood_map.png) |  90's Baby Makers - Overwhelming sensual!
 
 **Future Work**
 
