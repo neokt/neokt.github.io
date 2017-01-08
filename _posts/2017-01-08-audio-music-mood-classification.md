@@ -4,7 +4,7 @@ excerpt: "Using a multinomial classification approach to predict mood"
 header:
   overlay_image: audio-music-mood-classification_splash.jpg
   overlay_filter: 0.2
-  caption: "Photo: [**Oh Wonder**](http://ohwondermusic.com/), Terminal 5, NY, October 19, 2016"
+  caption: "Photo: [**Oh Wonder**](http://ohwondermusic.com/) at Terminal 5 on October, 19, 2016"
 categories:
   - Projects
 tags:
