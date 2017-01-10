@@ -1,6 +1,6 @@
 ---
 title: "Audio Music Mood Classification"
-excerpt: "Using a multinomial classification approach to predict mood"
+excerpt: "Using audio and track features to predict the mood of a song"
 header:
   overlay_image: audio-music-mood-classification_splash.jpg
   overlay_filter: 0.2
@@ -22,7 +22,7 @@ modified: 2017-01-08
 
 My third project at Metis consisted of diving into the wonderful worlds of APIs and classification metrics. But mostly, it was about facing the music... 
 
-Music accompanies us on every aspect of our lives. It enhances our activities, whether it be work, play or rest. I was interested in predicting how music evokes feelings, as the common denominator of shared experience for all music consumers. With individual songs tied to mood labels, it seemed feasible to be able to use audio features to predict the mood of a song.
+Music accompanies us on every aspect of our lives. It enhances our activities, whether it be work, play or rest. I was interested in predicting how music evokes feelings, as the common denominator of shared experience for all music consumers. With individual songs tied to mood labels, it seemed feasible to be able to use audio and track features to predict the mood of a song.
 
 There are many reasons why there would be a business case for this sort of problem - after all, moods and emotions are often what drive consumer purchasing decisions, which would be well within a record label, streaming provider or brand manager's purview. Some possible use cases of these predictions fall into two categories:
 
