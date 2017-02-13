@@ -12,6 +12,7 @@ tags:
   - matrix decomposition
   - topic modeling
   - collaborative filtering
+  - content-based filtering
   - flask
   - plotly
 modified: 2017-02-13
@@ -102,7 +103,7 @@ In general, I found that the topics seemed to represent mostly American, rather 
 
 **Recommendations**
 
-I used one of the outputs of my matrix factorization exercise (a petition vs. topic matrix) as the starting point to build a petition recommendation system using collaborative filtering (with topic importances in place of where one might normally use user ratings). I used cosine similarity to compute the pairwise distances between all petitions in the matrix based on the topic importances. Due to hardware limitations, I was only able to calculate this for the first 10K of the petitions in my matrix - with more time I would have re-hosted the project on an AWS EC2 GPU instance and tried again with all the petitions in my dataset!
+I used one of the outputs of my matrix factorization exercise (a petition vs. topic matrix) as the starting point to build a petition recommendation system using a content-based approach to filtering (using topic importances in place of where one might normally use user ratings). I used cosine similarity to compute the pairwise distances between all petitions in the matrix based on the topic importances. Due to hardware limitations, I was only able to calculate this for the first 10K of the petitions in my matrix - with more time I would have re-hosted the project on an AWS EC2 GPU instance and tried again with all the petitions in my dataset!
 
 By ranking the resulting entries in the similarity matrix, I was able to produce the most similar petitions (by topic distribution). For example, a few of the most similar petitions for ‘Maximum Sentence for Darius Ewing for Setting Dog, Justice, on Fire' were: 
 
@@ -116,11 +117,11 @@ Based on a few test cases, I was pretty happy with how the recommendations turne
 
 **Production**
 
-Now that I had the topic landscape for the petitions and a recommender, I wanted to build a dashboard to productionalize these findings. A hypothetical dashboard would be integrated with the change.org website, and hence my prototype uses an internal reference - a unique petition ID - to identify petitions. I used Flask, Plotly and Cufflinks (a library that enables Plotly charting from a Pandas dataframe) to develop this; I chose Plotly and Cufflinks due to the ability to incorporate interactive charts. 
+Now that I had the topic landscape for the petitions and a recommender, I wanted to build a dashboard to productionalize these findings. A hypothetical dashboard would be integrated with the change.org website, and hence my prototype uses an internal reference - a unique petition ID - to identify petitions. I used Flask, Plotly and Cufflinks (a library that enables Plotly charting from a Pandas dataframe) to develop the interactive plots. 
 
-My dashboard app is live [here](http://bit.do/changeorg-petition-dashboard)! You can try it yourself with petition IDs 8287766 ([Stop abusing chickens](https://www.change.org/p/aramark-stop-abusing-chickens)) or 1508829 [Urge MA legislators to support rape survivor rights](https://www.change.org/p/massachussets-legislators-support-rape-survivor-rights) (tabled on the to do list: to publish a list of compatible petition IDs, titles and links).
+My dashboard app is [live](http://bit.do/changeorg-petition-dashboard)! You can try it yourself with petition IDs 8287766 ([Stop abusing chickens](https://www.change.org/p/aramark-stop-abusing-chickens)) or 1508829 ([Urge MA legislators to support rape survivor rights](https://www.change.org/p/massachussets-legislators-support-rape-survivor-rights)). Tabled on the to-do list: Publish a list of compatible petition IDs, titles and links.
 
-Here are a few screenshots of the app; the landing page contains a bubble chart of petition topics representing their frequency and range of success. 
+Here are a few screenshots of the app; the landing page contains an interactive bubble chart of petition topics representing their frequency and range of success. 
 	
 ![landing page][screenshot1]
 
@@ -136,7 +137,7 @@ Here are the dashboard results for topic distributions and recommendations for t
 
 **Future work**
 
-Currently, recommendations only work for the first 10K petitions in my data; an actual production pipeline would update the collaborative filtering matrix regularly with new petitions from change.org. 
+Currently, recommendations only work for the first 10K petitions in my data; an actual production pipeline would update the similarity matrix regularly with new petitions from change.org. 
 
 With additional time, I would build out a classification pipeline to use petition metadata along with the petition text and comment language elements to predict the probability of petition success!
 
