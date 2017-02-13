@@ -1,6 +1,6 @@
 ---
 title: "Topic Modeling Online Petitions"
-excerpt: "Using NLP to develop a topic insight and recommendations dashboard for change.org petitions"
+excerpt: "Using NLP techniques to build a topic insight and recommendations dashboard for change.org petitions"
 header:
   overlay_image: topic-modeling_splash.jpg
   overlay_filter: 0.5
@@ -56,12 +56,13 @@ Due to time limitations I was only able to extract the top 10 comments associate
 * Commenter name
 * Commenter location
 * Commenter date
-* Number of hearts (“likes”)
+* Number of hearts ("likes")
 * Comment text
 
 **Exploring the data**
 
 An initial exploration of the data showed trends in line with expectations. I imagined the number of petition supporters to be extremely right skewed, which was indeed the case. Comparing the supporters between open and victorious petitions - victorious petitions had a median of 530 supporters while open petitions had a median of 41. Both had many outliers, and a wide spread of supporter counts.
+
 ![Exploratory analysis][chart1]
 
 [chart1]: https://raw.githubusercontent.com/neokt/neokt.github.io/master/images/topic-modeling_chart1.png "Exploratory analysis"
@@ -89,7 +90,7 @@ Comments on other methods not used:
 
 ![conditional probability of success][chart2]
 
-[chart2]: https://raw.githubusercontent.com/neokt/neokt.github.io/master/images/topic-modeling_chart2.png "conditional probability of success”
+[chart2]: https://raw.githubusercontent.com/neokt/neokt.github.io/master/images/topic-modeling_chart2.png "conditional probability of success"
 
 I calculated the probabilities of succeeding for each of the 30 petitions I had identified, using the proportions of victorious petitions to all petitions. Unsurprisingly, petitions related to food, farming and livestock and animal cruelty tended to be the most successful; these are uncontroversial topics that most people can get behind! It was interesting that the topics revealed layered nuances - several topics appeared for government and education, but were separable by their content. For example, I labeled a topic “Education - Teaching” and another topic “Education - School Administration”; the former contained words such as “teacher” and “learning”, and the latter contained words such as “district” and “principal”.
 
@@ -123,17 +124,20 @@ Now that I had the topic landscape for the petitions and a recommender, I wanted
 My dashboard app is live [here](http://bit.do/changeorg-petition-dashboard)! You can try it yourself with petition IDs [8287766](https://www.change.org/p/aramark-stop-abusing-chickens) or [1508829](https://www.change.org/p/massachussets-legislators-support-rape-survivor-rights) (tabled on the to do list: to publish a list of compatible petition IDs, titles and links).
 
 Here are a few screenshots of the app; the landing page contains a bubble chart of petition topics representing their frequency and range of success. 
- ![landing page][screenshot1]
+
+![landing page][screenshot1]
 
 Here are the dashboard results for topic distributions and recommendations for the examples, [Stop abusing chickens](https://www.change.org/p/aramark-stop-abusing-chickens) and [Urge MA legislators to support rape survivor rights](https://www.change.org/p/massachussets-legislators-support-rape-survivor-rights):
- ![first example][screenshot2]
- ![second example][screenshot3]
 
-[screenshot1]: https://raw.githubusercontent.com/neokt/topic-modeling-online-petitions/master/screenshots/changeorg-petition-dashboard-screenshot01.png “landing page”
-[screenshot2]: https://raw.githubusercontent.com/neokt/topic-modeling-online-petitions/master/screenshots/changeorg-petition-dashboard-screenshot02.png “first example”
-[screenshot3]: https://raw.githubusercontent.com/neokt/topic-modeling-online-petitions/master/screenshots/changeorg-petition-dashboard-screenshot03.png “second example”
+![first example][screenshot2]
 
- **Future work**
+![second example][screenshot3]
+
+[screenshot1]: https://raw.githubusercontent.com/neokt/topic-modeling-online-petitions/master/screenshots/changeorg-petition-dashboard-screenshot01.png "landing page"
+[screenshot2]: https://raw.githubusercontent.com/neokt/topic-modeling-online-petitions/master/screenshots/changeorg-petition-dashboard-screenshot02.png "first example"
+[screenshot3]: https://raw.githubusercontent.com/neokt/topic-modeling-online-petitions/master/screenshots/changeorg-petition-dashboard-screenshot03.png "second example"
+
+**Future work**
 
 Currently, recommendations only work for the first 10K petitions in my data; an actual production pipeline would update the collaborative filtering matrix regularly with new petitions from change.org. With additional time, I would build out a classification pipeline to use petition metadata along with the petition text and comment language elements to predict the probability of petition success!
 
