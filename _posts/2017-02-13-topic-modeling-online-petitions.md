@@ -97,7 +97,7 @@ I calculated the probabilities of succeeding for each of the 30 topics I had ide
 
 It was also interesting that the topics revealed layered nuances - several topics appeared for government and education, but were separable by their content. For example, I labeled a topic “Education - Teaching” and another topic “Education - School Administration”; the former contained words such as “teacher” and “learning”, and the latter contained words such as “district” and “principal”.
 
-Finally, there were some amusing and frivolous topics towards the bottom of the success chart, such as [Harambe](https://www.change.org/p/nintendo-make-harambe-a-pok%C3%A9mon) and [First world problems](https://www.change.org/p/elisha-compton-let-alaina-compton-dye-her-hair-blue), which as you can imagine are generally less likely to succeed.
+Finally, there were some amusing and frivolous topics towards the bottom of the success chart, such as [Harambe](https://www.change.org/p/nintendo-make-harambe-a-pok%C3%A9mon) and [First World Problems](https://www.change.org/p/elisha-compton-let-alaina-compton-dye-her-hair-blue), which as you can imagine are generally less likely to succeed.
 
 In general, I found that the topics seemed to represent mostly American, rather than world interests. This seemed logical as change.org is a US-based site.
 
