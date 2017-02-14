@@ -22,12 +22,12 @@ modified: 2017-02-13
 
 There are currently about 50 thousand active petitions on the site. As you may expect, an online forum like this has a lot of hits and misses - 17% of the ongoing petitions on the site have less than 10 supporters. However, there is a lot of good that the petitions on the site have facilitated, for example [President Obama signing a bill of rights for sexual assault survivors](https://www.change.org/p/urge-congress-to-support-rape-survivor-rights). There are also alot of [smaller community successes](https://www.change.org/p/st-helens-school-district-502-school-board-members-keep-mr-zmolek-as-a-full-time-choir-director-2). And then, there are those which [serve as a rallying point for action](https://www.change.org/m/demand-action-from-president-elect-donald-trump). 
 
-I put myself in the shoes of a data scientist at [change.org](http://change.org/) and thought of what kind of data product or insight might be the result of this analysis. My primary two objectives were: 
+I put myself in the shoes of a data scientist at [change.org](http://change.org/) and thought of what kind of data product or insight might be the result of this analysis. My primary two objectives were to: 
 
-1. To perform topic modeling to improve intelligence around issues:
+1. Perform topic modeling to improve intelligence around issues:
   * What topics do people care about?
   * Which topics are the most successful in producing change?
-2. To develop functionality for users: 
+2. Develop functionality for users: 
   * Creating a petition dashboard that is an extension of current online services for petition starters and signers
     * For a given petition, provide topic breakdown
     * Provide petition recommendations based on topic similarity
@@ -113,7 +113,7 @@ By ranking the resulting entries in the similarity matrix, I was able to produce
 * Brian A Clark: Drop Charges against Connersville Police Officer and his wife
 * Justice for Taz, Puppy Stabbed and Dumped in Abilene, Texas
 
-Based on a few test cases, I was pretty happy with how the recommendations turned out!
+These petition subjects are pretty horrific (and worthy of rallying behind)! Based on a few test cases, I was pretty happy with how the recommendations turned out.
 
 **Production**
 
