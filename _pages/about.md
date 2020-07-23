@@ -2,7 +2,7 @@
 title: "About Me"
 layout: single
 author_profile: true
-excerpt: "Kai-Ting Neo, FCAS, MAAA"
+excerpt: "Kai-Ting Neo"
 permalink: /about/
 header:
   overlay_image: splash1.jpg
@@ -11,12 +11,12 @@ header:
 
 {% include base_path %}
 
-Hi, I'm Ting Neo. I am a data scientist and actuary hailing from NYC, Hong Kong and Singapore.
+Hi, I'm Ting Neo. I am a data scientist hailing from NYC, Hong Kong and Singapore, and I'll soon be relocating to the Bay Area! 
+ 
+Data science and machine learning bring out a deep rooted joy of discovery in me. I get excited about building things, I love exploring (both in the realms of reality and abstraction), and I enjoy connecting patterns to shape my perspective of the world. 
 
-Analytics and data science bring out a deep rooted joy of discovery in me. I love exploring (both in the realms of reality and abstraction), and connecting patterns to find truths. Learning data science is like equipping myself with tools to satisfy my curiosity of the world - much like acquiring a map, or sending a contraption on a carefully calibrated path through space.
+After graduating from the Wharton School of the University of Pennsylvania with a B.Sc. in Economics, I spent many years in consulting as an actuary evaluting insurance risk for property & casualty insurance clients. In 2016, I attended [Metis](http://www.thisismetis.com/), a 12-week data science bootcamp to transition into a data science career. I created this blog to showcase my projects, chronicle my data science journey, and share findings.
 
-After graduating from the Wharton School of the University of Pennsylvania, I spent 8 years in consulting driving actuarial and operational solutions for property & casualty insurance clients. I recently completed [Metis](http://www.thisismetis.com/), a 12-week data science bootcamp. I created this blog to showcase my projects, chronicle my data science journey, and share findings.
-
-I am interested in insurance, fintech and insurtech, bridging the gap between business and technology, and creating value from data-driven insights. In my free time, I enjoy travelling, hiking, cycling, reading science fiction and fantasy, indie electronica and rosé.
+In my free time, I enjoy reading science fiction and fantasy, travelling, hiking, cycling, running, indie electronica and playing the piano.
 
 I would love to talk to you! Please don't hesitate to reach out to me at <neo.kaiting@gmail.com>.
